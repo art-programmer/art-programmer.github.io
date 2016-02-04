@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Project_1</title></head><body><big><big>Project 1: Image Alignment with Pyramids</big></big><br>
+<big style="font-weight: bold;">Description:</big><br>
+The algorithm is pretty simple. To composite a color image, we just
+need to put three images of different channels together. To align two
+images, the single-scale implementation just slide one image and
+compute the NCC score for their common region. The displacement with
+the highest score is selected as the final results. However, in
+practice, single-scale implementation does not work well as it is very
+slow and the displacement might be quite large. So all the results are
+from multi-scale implementation. For the multi-scale implementation. I
+first build a image pyramid (5 levels are used), and then align images
+in a coarse-to-fine manner. For the highest level, I allow a large
+displacement (10 pixels in my implementation), and for consecutive
+levels, the displacement could only differ from the results from higher
+level for a small amount (2 pixel offset is used). In this way, the
+alignment is speeded up dramatically.<br>
+<big style="font-weight: bold;">Results:</big><br>
+<img style="width: 1440px; height: 520px;" alt="result_1" src="result_1.jpg"><br>
+<img style="width: 1439px; height: 519px;" alt="result_2" src="result_2.jpg"><br>
+<img style="width: 1439px; height: 520px;" alt="result_3" src="result_3.jpg"><br>
+<br>
+<big style="font-weight: bold;">Discussion:</big><br>
+I found that the border of each image causes a lot trouble, so I cut
+off the border of each image (10%) to compute NCC scores based on only
+the central part.<br>
+<br>
+<big style="font-weight: bold;">Extra Credit:</big><br>
+<ul>
+  <li>Automatic cropping: There are usually white borders surrounding
+each image. So starting from the outmost line, I cut off a line if the
+minimum gray scale is larger than 200. The process stops once a line
+does not meet the criteria. I repeat this process for all four
+directions (up, bottom, left, and right). The result is as follows:</li>
+</ul>
+<img style="width: 1434px; height: 490px;" alt="automatic_cropping" src="automatic_cropping.jpg"> <br>
+<ul>
+  <li>Automatic contrasting: I apply the histeq function to each channel and get results with more constrast:</li>
+</ul>
+<img style="width: 1440px; height: 516px;" alt="automatic_contrasting" src="automatic_contrasting.jpg"><br>
+<ul>
+  <li>I explored a little bit about better color mapping and find that multiplying 0.9 to red and green channels for this image leads to slightly better result (the person looks more lively):</li>
+</ul>
+<img style="width: 1439px; height: 504px;" alt="better_color_mapping" src="better_color_mapping.jpg"><br>
+<ul>
+  <li>I also tried using gradients and edges for alignment. I use Sobel filtering for computing
+gradients and Laplacian filtering for computing edges. While I didn't
+observe much improvement as the alignment based on color metrics is
+already pretty good.</li>
+</ul>
+<img style="width: 1436px; height: 524px;" alt="gradients" src="gradients.jpg"><br>
+<img style="width: 1440px; height: 513px;" alt="edges" src="edges.jpg"><br>
+</body></html>
