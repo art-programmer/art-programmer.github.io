@@ -31,11 +31,14 @@ right thing.<br>
 <br>
 
 <span style="font-weight: bold;">Poisson Blending &amp; Mixed Gradients:<br>
-</span>To test the correctness of the implementation, I tried a simple case:<br>
+</span>To test the correctness of the implementation, I tried a simple
+case:<br>
+
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
   <tbody>
     <tr>
-      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 534px;" alt="before" src="poisson_blend_before_test.png"><br>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 534px;" alt="naive" src="naive_blend_test.png"><br>
       </td>
       <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 534px;" alt="Poisson" src="poisson_blended_image_test.png"><br>
       </td>
@@ -43,80 +46,254 @@ right thing.<br>
       </td>
     </tr>
     <tr>
-      <td style="vertical-align: top;"><br>
+      <td style="vertical-align: top; text-align: center;">Naive
+Blending<br>
       </td>
-      <td style="vertical-align: top;"><br>
+      <td style="vertical-align: top; text-align: center;">Poisson
+Blending<br>
       </td>
-      <td style="vertical-align: top;"><br>
+      <td style="vertical-align: top; text-align: center;">Mixed
+Gradients<br>
       </td>
     </tr>
   </tbody>
 </table>
-<br>
 
-
-<span style="font-weight: bold;"><br></span><span style="font-weight: bold;">Before Blending<br>
-After Blending<br>
-</span>The blending result looks okay at a glance. But when looking
-carefully, the texture around the penguine looks different with the
-texture on the target image and we can see some vague boundary on the
-left side.<br>
-
-<span style="font-weight: bold;"><br>
-<img style="width: 800px; height: 531px;" alt="Poisson_1" src="poisson_blend_before_2.png">Before Blending<br>
-<img style="width: 800px; height: 531px;" alt="Poisson_2" src="poisson_blended_image_2.png">After Blending</span><br>
-<br>
-
-<big style="font-weight: bold;">Discussion:</big><br>
-
-I found that the border of each image causes a lot trouble, so I cut
-off the border of each image (10%) to compute NCC scores based on only
-the central part.<br>
+As shown in this example, the Poisson blending looks okay and the mixed
+gradients blending looks more natural. Because the source region has
+constant color around the text, the Poisson blending result has has
+consistent color around the text. But the mixed gradients blending
+result has texture similar to the background around the text.<br>
 
 <br>
 
-<big style="font-weight: bold;">Extra Credit:</big><br>
+The penguin example:<br>
 
-<ul>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
 
-  <li>Automatic cropping: There are usually white borders surrounding
-each image. So starting from the outmost line, I cut off a line if the
-minimum gray scale is larger than 200. The process stops once a line
-does not meet the criteria. I repeat this process for all four
-directions (up, bottom, left, and right). The result is as follows:</li>
-</ul>
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 528px; height: 704px;" alt="naive" src="naive_blend_penguin.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 528px; height: 704px;" alt="Poisson" src="poisson_blended_image_penguin.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 528px; height: 704px;" alt="mixed" src="mixed_blended_image_penguin.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Naive
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Poisson
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Mixed
+Gradients<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-<img style="width: 1434px; height: 490px;" alt="automatic_cropping" src="automatic_cropping.jpg"> <br>
-
-<ul>
-
-  <li>Automatic contrasting: I apply the histeq function to each
-channel and get results with more constrast:</li>
-</ul>
-
-<img style="width: 1440px; height: 516px;" alt="automatic_contrasting" src="automatic_contrasting.jpg"><br>
-
-<ul>
-
-  <li>I explored a little bit about better color mapping and find that
-multiplying 0.9 to red and green channels for this image leads to
-slightly better result (the person looks more lively):</li>
-</ul>
-
-<img style="width: 1439px; height: 504px;" alt="better_color_mapping" src="better_color_mapping.jpg"><br>
-
-<ul>
-
-  <li>I also tried using gradients and edges for alignment. I use Sobel
-filtering for computing
-gradients and Laplacian filtering for computing edges. While I didn't
-observe much improvement as the alignment based on color metrics is
-already pretty good.</li>
-</ul>
-
-<img style="width: 1436px; height: 524px;" alt="gradients" src="gradients.jpg"><br>
-
-<img style="width: 1440px; height: 513px;" alt="edges" src="edges.jpg"><br>
+Poisson blending works well but we can still see some artifact if
+looking carefully. The mixed gradients blending works better.<br>
 
 <br>
+
+The penguin comes to our campus:<br>
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 1000px; height: 563px;" alt="naive" src="naive_blend_penguin_again.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 1000px; height: 563px;" alt="Poisson" src="poisson_blended_image_penguin_again.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 1000px; height: 563px;" alt="mixed" src="mixed_blended_image_penguin_again.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Naive
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Poisson
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Mixed
+Gradients<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Results look similar with the previous one.<br>
+
+<br>
+
+The plane example:<br>
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 531px;" alt="naive" src="naive_blend_plane.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 531px;" alt="Poisson" src="poisson_blended_image_plane.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 531px;" alt="mixed" src="mixed_blended_image_plane.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Naive
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Poisson
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Mixed
+Gradients<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Both Poisson blending and mixed gradients blending work reasonably but
+they make the plane look too blue. This is because the background is
+more blue than the source region and the plane becomes more blue to
+minimize the gradient change.<br>
+
+<br>
+
+The seagull example:<br>
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 400px;" alt="naive" src="naive_blend_seagull.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 400px;" alt="Poisson" src="poisson_blended_image_seagull.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 400px;" alt="mixed" src="mixed_blended_image_seagull.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Naive
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Poisson
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Mixed
+Gradients<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+The result and reasoning is similar to the previous one.<br>
+
+<br>
+
+A failure case:<br>
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 600px;" alt="naive" src="naive_blend_rabbit.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 600px;" alt="Poisson" src="poisson_blended_image_rabbit.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 800px; height: 600px;" alt="mixed" src="mixed_blended_image_rabbit.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Naive
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Poisson
+Blending<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Mixed
+Gradients<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+This case fails because the target image has high frequency texture
+while the foreground object doesn't, which is the opposite of the ideal
+condition. The Poisson blending is not so bad but the mixed gradients
+blending fails miserably because the gradients of the target image is
+preserved.<br>
+
+<br>
+
+I think results of mixed gradients blending usually looks more natural
+in the region surrounding the foreground object. But the danger of
+mixed gradients blending is that the appearance of the foreground
+object might be affected by the texture of the target image.<br>
+
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"></span><br>
+
+<span style="font-weight: bold;">Color2Gray:<br>
+</span>The reconstruction result of the given example:<br>
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 128px; height: 125px;" alt="color" src="samples/colorBlindTest35.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 128px; height: 125px;" alt="naive" src="gray_image_naive_35.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 128px; height: 125px;" alt="gradient" src="gray_image_gradient_35.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">RGB Image<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">rgb2gray<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Gradient-domain
+Processing<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+The number in the gradient-domain processing result is clear.<br>
+
+<br>
+
+Another example:<br>
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 400px; height: 63px;" alt="color" src="text.jpg"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 400px; height: 63px;" alt="naive" src="gray_image_naive_text.png"><br>
+      </td>
+      <td style="vertical-align: top; width: 33%;"><img style="width: 400px; height: 63px;" alt="gradient" src="gray_image_gradient_text.png"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">RGB Image<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">rgb2gray<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Gradient-domain
+Processing<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+The gradient-domain processing result has more contrast.<br>
+
+<br>
+
 </body></html>
