@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Project_2</title>
+
+  
+</head><body>
+<big><big>Project 4: Dynamic Textures<br>
+</big></big><span style="font-weight: bold;">Description of
+Implementation:<br>
+</span>I implemented the paper, Dynamic Textures, by Stefano Soatto. As
+the paper explained, I first run PCA on the image sequence Y to build
+image bases and associate each image with coefficient vector X. The
+number of components is denoted as n. Then the algorithm learns how to
+predict next frame based on precedent frames by solving equation X(i) =
+A*[X(i - 1), X(i - 2), ..., X(i - k)] + v. We can use the equation (10)
+in the paper to solve X or equivalently solve the system of linear
+equations
+(ignoring v). The number of precedent frames to be considered is
+denoted as k. Then v subjects to
+Normal distribution and its variance Q is estimated as equation (12) in
+the paper. With A and v, we can predict the coefficient vector for a
+new frame based on precedent frames and reconstruct the image based on
+the coefficient vector. We can repeat predicting as much frame as we
+want, but I found that the error might be accumulated. I use t
+frames
+for learning matrices and predict 100 new frames. <br>
+
+<br>
+
+I found that although equation (10) in the paper works for n, k, and t
+values, the solution is more stable when n(k - 1) &lt;= t. This can
+also be viewed as the number of equation constraints should be equal to
+or larger than the number of unknown variables in the system of linear
+equations. There are nnk unknown variables and each frame (except the
+first k frames) provides n equations. So there is (t-k)n equations. So
+when n(k - 1) &lt;= t, the number of equations is no less than the
+number of unknown variables. Although we can use the pseudo inverse to
+solve the system of linear equations as equation (10) in the paper, I
+enforce n(k - 1) &lt;= t in my experiment to ensure solution stability.<br>
+
+<br>
+
+<span style="font-weight: bold;">Results:<br>
+</span>The left video in each row is a clip from the original video
+(t frames) and the right video is the result (t + 100 frames).<br>
+
+wave:<br>
+
+<br>
+
+<embed src="mediaplayer.swf?file=wave_2_clip.mp4" allowfullscreen="true" height="230" width="325">
+<embed src="mediaplayer.swf?file=wave_2_extended.mp4" allowfullscreen="true" height="230" width="325"><br>
+
+I use t = 200, n = 10 and k = 10 in this experiment.
+<br>
+
+<br>
+
+waterfall 1:<br>
+
+<br>
+
+<embed src="mediaplayer.swf?file=waterfall_1_clip.mp4" allowfullscreen="true" height="230" width="325">
+<embed src="mediaplayer.swf?file=waterfall_1_extended.mp4" allowfullscreen="true" height="230" width="325"><br>
+
+I use t = 200, n = 50 and k = 3 in this experiment.
+I use more principal components because this scene is more dynamic and
+requires more bases.<br>
+
+<br>
+
+<br>
+
+waterfall 2:<br>
+
+<br>
+
+<embed src="mediaplayer.swf?file=waterfall_3_clip.mp4" allowfullscreen="true" height="230" width="325">
+<embed src="mediaplayer.swf?file=waterfall_3_extended.mp4" allowfullscreen="true" height="230" width="325"><br>
+
+I use t = 300, n = 50 and k = 5 in this experiment.
+There are artifact near the end due to accumulated error.<br>
+
+<br>
+
+<span style="font-weight: bold;">Code:<span style="text-decoration: underline;"><br>
+<a href="DynamicTextures.m">code</a><br>
+</span>
+</span>
+</body></html>
