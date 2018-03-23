@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Raster-to-Vector: Revisiting Floorplan Transformation</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="content project_title top_block">
+      <h1>Raster-to-Vector: Revisiting Floorplan Transformation</h1>
+    </div>
+    
+    <div class="content project_headline">
+      <div class="img">
+        <img class="img_teaser" src="floorplan-transformation/teaser.png" alt="Teaser">
+      </div>
+      <div class="text">
+        <p>Figure 1: This paper makes a breakthrough in the problem of converting raster floorplan images to vector-graphics representations. From left to right, an input floorplan image, reconstructed vector-graphics representation visualized by our custom renderer, and a popup 3D model.</p>
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Abstract</h3>
+        <p>This paper addresses the problem of converting a rasterized floorplan image into a vector-graphics representation. Unlike existing approaches that rely on a sequence of low-level image processing heuristics, we adopt a learning-based approach. A neural architecture first transforms a rasterized image to a set of junctions that represent low-level geometric and semantic information (e.g., wall corners or door end-points). Integer programming is then formulated to aggregate junctions into a set of simple primitives (e.g., wall lines, door lines, or icon boxes) to produce a vectorized floorplan, while ensuring a topologically and geometrically consistent result. Our algorithm significantly outperforms existing methods and achieves around 90% precision and recall, getting to the range of production-ready performance. The vector representation allows 3D model popup for better indoor scene visualization, direct model manipulation for architectural remodeling, and further computational applications such as data analysis. Our system is efficient: we have converted hundred thousand production-level floorplan images into the vector representation and generated 3D popup models.</p>
+      </div>
+      <hr />  
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Video</h3>
+      </div>
+      <div class"project_video">
+        <iframe width="720" height="405" src="https://www.youtube.com/embed/ZjI36DvfVPc" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Paper</h3>
+        <div class="paper_title">Raster-to-Vector: Revisiting Floorplan Transformation</div>
+        <div class="paper_authors">
+          <a href="http://www.cse.wustl.edu/~chenliu/index.html">Chen Liu</a>,
+          <a href="http://www.jiajunwu.com">Jiajun Wu</a>,          
+          <a href="https://sites.google.com/site/pushmeet/">Pushmeet Kohli</a>,
+          <a href="http://www.cse.wustl.edu/~furukawa/index.html">Yasutaka Furukawa</a>
+        </div>
+	<div class="paper_venue">In <i>International Conference on Computer Vision (<b>ICCV</b>)</i>, 2017</div>
+	<!--div class="stress"><b>spotlignt presentation</b></div-->
+	<span class="link"><a href="floorplan-transformation/paper.pdf">[Paper]</a></span>
+	<span class="link"><a href="floorplan-transformation/supplementary.pdf">[Supp.]</a></span>
+	<span class="link"><a href="https://github.com/art-programmer/FloorplanTransformation">[Code
+	and Data]</a></span>
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content bottom_block">
+      <div class="text">
+        <h3>Downloads</h3>
+        <div class="paper_downloads">
+	  <a href="https://github.com/art-programmer/FloorplanTransformation">Code
+	  and Data</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layered Scene Decomposition via the Occlusion-CRF</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="content project_title top_block">
+      <h1>Layered Scene Decomposition via the Occlusion-CRF</h1>
+    </div>
+    
+    <div class="content project_headline">
+      <div class="img">
+        <img class="img_teaser" src="layered-scene/teaser.png" alt="Teaser">
+      </div>
+      <div class="text">
+        <p>Figure 1: Our Occlusion-CRF model decompose a scene into layers of segmented depthmaps.</p>
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Abstract</h3>
+        <p>This paper addresses the challenging problem of perceiving the hidden or occluded geometry of the scene depicted in any given RGBD image. Unlike other image labeling problems such as image segmentation where each pixel needs to be assigned a single label, layered decomposition requires us to assign multiple labels to pixels. We propose a novel "Occlusion-CRF" model that allows for the integration of sophisticated priors to regularize the solution space and enables the automatic inference of the layer decomposition. We use a generalization of the Fusion Move algorithm to perform Maximum a Posterior (MAP) inference on the model that can handle the large label sets needed to represent multiple surface assignments to each pixel. We have evaluated the proposed model and the inference algorithm on many RGBD images of cluttered indoor scenes. Our experiments show that not only is our model able to explain occlusions but it also enables automatic inpainting of occluded/invisible surfaces.</p>
+      </div>
+      <hr />  
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Spotlight Video</h3>
+      </div>
+      <div class"project_video">
+	<p><b>Introduction video</b></p>
+	<iframe width="720" height="405" src="https://www.youtube.com/embed/5rXoMPxjwdc" frameborder="0" allowfullscreen></iframe>
+        <!--<p>If you cannot play the video, please download our video <a href="layered-scene/spotlight.mp4">here</a>.</p>-->
+      </div>
+      <br />
+      <div class"project_video">
+	<p><b>Supplementary video</b></p>
+	<iframe width="720" height="405" src="https://www.youtube.com/embed/jjo1jI_sOHs" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Paper</h3>
+        <div class="paper_title">Layered Scene Decomposition via the Occlusion-CRF</div>
+        <div class="paper_authors">
+          <a href="http://www.cse.wustl.edu/~chenliu/index.html">Chen Liu</a>, 
+          <a href="https://sites.google.com/site/pushmeet/">Pushmeet Kohli</a>,
+          <a href="http://www.cse.wustl.edu/~furukawa/index.html">Yasutaka Furukawa</a>
+        </div>
+	<div class="paper_venue">In <i>Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)</i>, 2016</div>
+	<div class="stress"><b>spotlignt presentation</b></div>
+	<span class="link"><a href="http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_Layered_Scene_Decomposition_CVPR_2016_paper.pdf">[Paper]</a></span>
+	<span class="link"><a href="layered-scene/supplementary.pdf">[Supp.]</a></span>
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content bottom_block">
+      <div class="text">
+        <h3>Downloads</h3>
+        <div class="paper_downloads">
+	  <a href="https://github.com/art-programmer/LayeredSceneDecomposition">Code</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multi-way Particle Swarm Fusion</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="content project_title top_block">
+      <h1>Multi-way Particle Swarm Fusion</h1>
+    </div>
+    
+    <div class="content project_headline">
+      <div class="img">
+        <img class="img_teaser" src="swarm-fusion/teaser.png" alt="Teaser">
+      </div>
+      <div class="text">
+        <p>Figure 1: Swarm Fusion (SF) architecture and its relationships to existing methods. The bottom right example shows the general SF architecture, where each thread takes arbitrary number of solution proposals and concurrent solutions for fusion. The framework is flexible and can realize other data processing architectures depending on the parameters (e.g., the left two examples in the bottom row). It is easy to verify that existing popular MRF inference methods such as Alpha Expansion, Fusion Move, Parallel Alpha Expansion, and Hierarchical Fusion, are all special cases of SF.</p>
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Abstract</h3>
+	<p>This paper proposes a novel MAP inference framework for Markov Random Field (MRF) in parallel computing environments. The inference framework, dubbed Swarm Fusion, is a natural generalization of the Fusion Move method. Every thread (in a case of multi-threading environments) maintains and updates a solution. At each iteration, a thread can generate arbitrary number of solution proposals and take arbitrary number of concurrent solutions from the other threads to perform multi-way fusion in updating its solution. The framework is general, making popular existing inference techniques such as alpha-expansion, fusion move, parallel alpha-expansion, and hierarchical fusion, its special cases. We have evaluated the effectiveness of our approach against competing methods on three problems of varying difficulties, in particular, the stereo, the optical flow, and the layered depthmap estimation problems.</p>
+      </div>
+      <hr />  
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Spotlight Video</h3>
+      </div>
+      <div class"project_video">
+        <!--<p><b>Introduction video</b></p>-->
+	<iframe width="720" height="405" src="https://www.youtube.com/embed/Bv1I59_jNUI" frameborder="0" allowfullscreen></iframe>
+        <!--<p>If you cannot play the video, please download our video <a href="layered-scene/spotlight.mp4">here</a>.</p>-->
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content">
+      <div class="text">
+        <h3>Paper</h3>
+        <div class="paper_title">Multi-way Particle Swarm Fusion</div>
+        <div class="paper_authors">
+          <a href="http://www.cse.wustl.edu/~chenliu/index.html">Chen Liu<sup>*</sup></a>,
+	      <a href="http://www.cse.wustl.edu/~yanhang/index.html">Hang Yan<sup>*</sup></a>,
+          <a href="https://sites.google.com/site/pushmeet/">Pushmeet Kohli</a>,
+          <a href="http://www.cse.wustl.edu/~furukawa/index.html">Yasutaka Furukawa</a>
+	  <br />          
+          (* indicates equal contribution.)
+        </div>
+        <!--<div class="paper_venue">In <i>Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>)</i>, 2016</div>-->
+        <span class="link"><a href="https://arxiv.org/abs/1612.01234">[Arxiv]</a></span>
+      </div>
+      <hr />
+    </div>
+    
+    <div class="content bottom_block">
+      <div class="text">
+        <h3>Downloads</h3>
+        <div class="paper_downloads">
+          <!--<a href="https://github.com/art-programmer/LayeredSceneDecomposition">Code</a>-->
+          Code (coming soon)
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
