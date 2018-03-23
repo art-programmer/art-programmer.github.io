@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chen Liu</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div class="content">
+    <div style="text-align: right; display: inline; float: left; margin: 5px 50px 0px 0px;"><a href="images/ChenLiu.png"><img src="images/ChenLiu.png" alt="Photo" width="250"></a></div>
+    <div style="text-align: left; margin: 5px 10px 0px 0px">
+      <h2>Chen Liu</h2>
+      <p>chenliu [at] wustl (dot) edu</p>
+      <p>I am a third-year Ph.D. student in Computer Science and Engineering at Washington University in St. Louis. I am advised by Professor <a href="http://www.cse.wustl.edu/~furukawa">Yasutaka Furukawa</a>. My research interests include 3D vision and deep learning.</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3>Publications</h3>
+    <table class="publication-table">
+      <tr>
+	<td class="image-column">
+	  <a href="http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_Layered_Scene_Decomposition_CVPR_2016_paper.pdf"><img src="images/layered-scene.png" class="publication-image"></a>
+	</td>
+	<td class="description-column">
+	  <div class="title"><b>Layered Scene Decomposition via the Occlusion-CRF</p></div>
+	  <div class="authoers"><b>Chen Liu</b>, Pushmeet Kohli, Yasutaka Furukawa</div>
+	  <div>CVPR 2016 (<font color="#ff0000">spotlignt presentation</font>)</div>
+	  <div>
+	    <span class="link"><a href="http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Liu_Layered_Scene_Decomposition_CVPR_2016_paper.pdf">[Paper]</a></span>
+	    <span class="link"><a href="https://github.com/art-programmer/LayeredSceneDecomposition">[Code]</a></span>
+	    <span class="link"><a href="http://www.cse.wustl.edu/%7Efurukawa/papers/2016-cvpr-layer-supplementary.pdf">[Suppl.]</a></span>
+	  </div>
+	</td>
+      </tr>
+    </table>
+  </div>
+</body>
