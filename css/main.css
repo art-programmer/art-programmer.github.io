@@ -1,10 +1,12 @@
 header {
     width: 100%;
-    height: 60px;
+    height: 70px;
     margin-top: 0px;
     text-align: left;
-    background-color: #eeeeee;
+    background-color: #ffffff;
     position: fixed;
+    box-shadow: 10px 0px 5px grey;
+    clear: both;
 }
 
 body {
@@ -105,7 +107,7 @@ div.stress {
 }
 
 div.top_block {
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 div.bottom_block {
@@ -133,13 +135,27 @@ a.author:visited {
 }
 
 div.tab {
-    font-size:36.0px;   
+    font-size:30.0px;
+    max-width: 1000px;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-div.tab.name {
-    text-align: left;
+div.tab-name, div.tab-link {
+    display:inline-block;
+    text-decoration:none;
 }
 
-div.tab.link {
-    text-align: right;
+div.tab-name {
+    float:left;
+    padding-left:30px;
+    font-size:150%;
+    padding-top:10px;    
+}
+
+div.tab-link {
+    float:right;
+    padding-right:30px;
+    padding-top:15px;        
 }
