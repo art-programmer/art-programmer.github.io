@@ -10,11 +10,11 @@
     // Declare all variables
     var i, tabcontent, tablinks;
 
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
+    <!-- // Get all elements with class="tabcontent" and hide them -->
+    <!-- tabcontent = document.getElementsByClassName("tabcontent"); -->
+    <!-- for (i = 0; i < tabcontent.length; i++) { -->
+    <!--     tabcontent[i].style.display = "none"; -->
+    <!-- } -->
 
     // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
@@ -23,18 +23,20 @@
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+    window.location.assign("#publication");
+		    evt.currentTarget.className += " active";
 		    }
 		    </script>
-  <body>
-    
+
 <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'London')">Publication</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
   <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
 </div>
+  
+  <body>
+    
     
     <div class="content top_block">
       <div style="text-align: right; display: inline; float: left; margin: 5px 50px 0px 0px; border-radius:50%"><img src="images/portrait.png" alt="Photo" width="250"></div>
@@ -52,7 +54,7 @@
       </div>
     </div>
 
-    <div class="content">
+    <div id="publication" class="content">
       <hr />
       <h3>Publications</h3>
       <table class="publication-table">
