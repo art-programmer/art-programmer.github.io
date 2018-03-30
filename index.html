@@ -2,27 +2,53 @@
 <html>
   <head>
     <title>Chen Liu</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css?version=1">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   </head>
 
   <!-- Tab links -->
-  <header><div id="header"></div></header>
+  <header>
+    <div id="header"></div>
+    <script>
+      $("#header").load("header.html");
+    </script>
+  </header>
   <body>    
     <div class="content top_block">
-      <div style="text-align: right; display: inline; float: left; margin: 5px 50px 0px 0px; border-radius: 50%"><img src="images/portrait.png" alt="Photo" width="250"></div>
-      <div style="text-align: left; margin: 5px 10px 0px 0px">
-	<h2>Chen Liu</h2>
-	<p>chenliu [at] wustl (dot) edu</p>
-	<p><a href="materials/CV.pdf">[CV]</a>, <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5BEc6k7ptiElxghcQRxMv8BJ3_GeT9L0QbJOlqXdIjGMcJM-UvfwhrI4VXwRi0ZkJoPZWELuWKYrS78D5pEdnnzCSRu2sTerDXXOxy9Q9HsVNyheo&user=Jy3u1_wAAAAJ">[Google
-	Scholar]</a>, and <a href="https://github.com/art-programmer">[GitHub]</a></p>
-	<p>I am a fourth-year Ph.D. student in Computer Science and Engineering
-	at Washington University in St. Louis. I am advised by
-	Professor <a href="http://www.cse.wustl.edu/~furukawa">Yasutaka
-	Furukawa</a>. My research interests include <b>3D vision</b>
-	and <b>scene understanding</b>. I am particularly interested in
-	geometry reasoning from static images for indoor scenes.</p>
-      </div>
+      <!-- <div style="text-align: right; display: inline; float: left; margin: 5px 50px 0px 0px;"><img src="images/portrait.png" alt="Photo" width="220" style="border-radius: 50%"></div> -->
+      <!-- <div style="text-align: left; margin: 5px 10px 0px 0px"> -->
+      <!-- 	<h2>Chen Liu</h2> -->
+      <!-- 	<p>chenliu [at] wustl (dot) edu</p> -->
+      <!-- 	<p><a href="materials/CV.pdf" target="_blank">[CV]</a>, <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5BEc6k7ptiElxghcQRxMv8BJ3_GeT9L0QbJOlqXdIjGMcJM-UvfwhrI4VXwRi0ZkJoPZWELuWKYrS78D5pEdnnzCSRu2sTerDXXOxy9Q9HsVNyheo&user=Jy3u1_wAAAAJ">[Google -->
+      <!-- 	Scholar]</a>, and <a href="https://github.com/art-programmer">[GitHub]</a></p> -->
+      <!-- 	<p>I am a fourth-year Ph.D. student in Computer Science and Engineering -->
+      <!-- 	at Washington University in St. Louis. I am advised by -->
+      <!-- 	Professor <a href="http://www.cs.sfu.ca/~furukawa">Yasutaka -->
+      <!-- 	Furukawa</a>. My research interests include <b>3D vision</b> -->
+      <!-- 	and <b>scene understanding</b>. I am particularly interested in -->
+      <!-- 	geometry reasoning using learning techniques.</p> -->
+      <!-- </div> -->
+      <table class="about-table">
+	<tr>
+	  <td class="image-column">
+	    <img src="images/portrait.png" alt="Photo" width="220" style="border-radius: 50%">
+	  </td>
+	  <td class="description-column">
+	    <div class="content text">
+      	      <h2>Chen Liu</h2>
+      	      <p>chenliu [at] wustl (dot) edu</p>
+      	      <p><a href="materials/CV.pdf" target="_blank">[CV]</a>, <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F5BEc6k7ptiElxghcQRxMv8BJ3_GeT9L0QbJOlqXdIjGMcJM-UvfwhrI4VXwRi0ZkJoPZWELuWKYrS78D5pEdnnzCSRu2sTerDXXOxy9Q9HsVNyheo&user=Jy3u1_wAAAAJ">[Google
+      		  Scholar]</a>, and <a href="https://github.com/art-programmer">[GitHub]</a></p>
+      	      <p>I am a fourth-year Ph.D. student in Computer Science and Engineering
+      		at Washington University in St. Louis. I am advised by
+      		Professor <a href="http://www.cs.sfu.ca/~furukawa">Yasutaka
+      		  Furukawa</a>. My research interests include <b>3D vision</b>
+      		and <b>scene understanding</b>. I am particularly interested in
+      		geometry reasoning using learning techniques.</p>
+	    </div>
+	  </td>
+	</tr>
+      </table>
     </div>
 
     <div class="content">
@@ -184,8 +210,5 @@
       </table>
     </div>
 
-<script>
-    $("#header").load("header.html");
-</script>
   </body>
 </html>
