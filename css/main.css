@@ -159,3 +159,10 @@ div.tab-link {
     padding-right:30px;
     padding-top:15px;        
 }
+
+
+a sup{
+  display:inline-block;
+  line-height:1.1em;
+  text-decoration:none;
+}
