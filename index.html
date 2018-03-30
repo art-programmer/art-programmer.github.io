@@ -4,10 +4,40 @@
     <title>Chen Liu</title>
     <link rel="stylesheet" href="./css/main.css">
   </head>
-  <body>
 
+  <script>
+    function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+		    }
+		    </script>
+  <body>
+    
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+    
     <div class="content top_block">
-      <div style="text-align: right; display: inline; float: left; margin: 5px 50px 0px 0px;"><img src="images/portrait.png" alt="Photo" width="250"></div>
+      <div style="text-align: right; display: inline; float: left; margin: 5px 50px 0px 0px; border-radius:50%"><img src="images/portrait.png" alt="Photo" width="250"></div>
       <div style="text-align: left; margin: 5px 10px 0px 0px">
 	<h2>Chen Liu</h2>
 	<p>chenliu [at] wustl (dot) edu</p>
@@ -26,6 +56,31 @@
       <hr />
       <h3>Publications</h3>
       <table class="publication-table">
+	<tr>
+          <td class="image-column">
+            <a href="planenet.html"><img src="images/planenet.png" class="publication-image"></a>
+          </td>
+          <td class="description-column">
+            <div class="content">
+              <div class="text">
+                <div class="paper_title">FloorNet: A Unified Framework for Floorplan Reconstruction from 3D Scans</div>
+                <div class="paper_authors">
+                  <a class="author" href="http://www.cse.wustl.edu/~chenliu/"><b>Chen Liu</b><sup>*</sup></a>,
+		  <a class="author">Jiaye Wu<sup>*</sup></a>,
+                  <a class="author" href="http://www.cs.sfu.ca/~furukawa/">Yasutaka Furukawa</a>
+		  <br />
+                  (* indicates equal contribution.)
+                </div>
+                <div class="paper_venue">arXiv:1612.01234, 2016</div>
+
+                <span class="link"><a href="https://arxiv.org/pdf/1612.01234v1.pdf">[Arxiv]</a></span>
+                <span class="link"><a href="planenet.html">[Project Page]</a></span>
+                <span class="link"><a href="https://github.com/art-programmer/FloorNet">[Code]</a></span>
+                <span class="link"><a href="planenet/supplementary.pdf">[Supp.]</a></span>-->
+              </div>
+            </div>
+          </td>
+        </tr>	
 	<tr>
           <td class="image-column">
             <a href="planenet.html"><img src="images/planenet.png" class="publication-image"></a>
@@ -95,7 +150,7 @@
                 </div>
                 <div class="paper_venue"><i>arXiv:1612.01225</i>, 2016</div>
 
-		<span class="link"><a href="https://arxiv.org/pdf/1612.01225v1.pdf">[PDF]</a></span>
+		<span class="link"><a href="https://arxiv.org/pdf/1612.01225v1.pdf">[Arxiv]</a></span>
                 <span class="link"><a href="floorplan-matching.html">[Project Page]</a></span>
                 <!--<span class="link"><a href="https://github.com/art-programmer/LayeredSceneDecomposition">[Code]</a></span>-->
                 <span class="link"><a href="floorplan-matching/supplementary.pdf">[Supp.]</a></span>
@@ -121,7 +176,7 @@
                 </div>
                 <div class="paper_venue">arXiv:1612.01234, 2016</div>
 
-                <span class="link"><a href="https://arxiv.org/pdf/1612.01234v1.pdf">[PDF]</a></span>
+                <span class="link"><a href="https://arxiv.org/pdf/1612.01234v1.pdf">[Arxiv]</a></span>
                 <span class="link"><a href="swarm-fusion.html">[Project Page]</a></span>
                 <!--<span class="link"><a href="https://github.com/art-programmer/LayeredSceneDecomposition">[Code]</a></span>
                     <span class="link"><a href="floorplan-matching/supplementary.pdf">[Supp.]</a></span>-->
