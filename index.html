@@ -5,34 +5,9 @@
     <link rel="stylesheet" href="./css/main.css">
   </head>
 
-  <script>
-    function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    <!-- // Get all elements with class="tabcontent" and hide them -->
-    <!-- tabcontent = document.getElementsByClassName("tabcontent"); -->
-    <!-- for (i = 0; i < tabcontent.length; i++) { -->
-    <!--     tabcontent[i].style.display = "none"; -->
-    <!-- } -->
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    window.location.assign("#publication");
-		    evt.currentTarget.className += " active";
-		    }
-		    </script>
-
 <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">Publication</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  <a href="#publications">Publications</a>
 </div>
   
   <body>
@@ -54,7 +29,8 @@
       </div>
     </div>
 
-    <div id="publication" class="content">
+    <div class="content">
+      <a name="publications"></a>
       <hr />
       <h3>Publications</h3>
       <table class="publication-table">
