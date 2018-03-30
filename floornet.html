@@ -14,7 +14,9 @@
         <img class="img_teaser" src="floornet/teaser.jpg" alt="Teaser">
       </div>
       <div class="text">
-        <p>Figure 1: We propose a novel network, FloorNet, to turn RGBD videos of indoor spaces into vector-graphics floorplans. FloorNet consists of three DNN branches. The first branch uses PointNet~\cite{qi2016pointnet} to directly consume 3D information. The second branch takes a top-down point density image in a floorplan domain with a fully convolutional network~\cite{long2015fully}, and produces pixel-wise geometry and semantics information. The third branch produces deep image features by a dilated residual network trained on the semantic segmentation task~\cite{yu2017dilated} as well as a stacked hourglass CNN trained on the room layout estimation~\cite{newell2016stacked}. The PointNet branch and the floorplan branch exchanges intermediate features at every layer, while the image branch contributes deep image features into the decoding part of the floorplan branch. This hybrid DNN architecture effectively processes an input RGBD video with camera poses, covering a large 3D space.</p>
+        <p>Figure 1: We propose a novel network, FloorNet, to turn RGBD videos
+        of indoor spaces into vector-graphics floorplans. FloorNet consists of
+        three DNN branches. The first branch uses PointNet to directly consume 3D information. The second branch takes a top-down point density image in a floorplan domain with a fully convolutional network, and produces pixel-wise geometry and semantics information. The third branch produces deep image features by a dilated residual network trained on the semantic segmentation task as well as a stacked hourglass CNN trained on the room layout estimation. The PointNet branch and the floorplan branch exchanges intermediate features at every layer, while the image branch contributes deep image features into the decoding part of the floorplan branch. This hybrid DNN architecture effectively processes an input RGBD video with camera poses, covering a large 3D space.</p>
       </div>
       <hr />
     </div>

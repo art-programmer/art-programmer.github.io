@@ -23,7 +23,7 @@ a img {
 /*
 div.content {
     padding: 25px;
-    background-color: #fff;    
+    background-color: #fff;
     width: 1000px;
     margin: 25px auto;
     clear: both;
@@ -35,7 +35,7 @@ div.content {
 div.content {
     padding-left: 50px;
     padding-right: 50px;
-    background-color: #fff;    
+    background-color: #fff;
     max-width: 1000px;
     /*margin: 25px auto;
     margin-left: 25px;
@@ -65,6 +65,17 @@ td.image-column {
 td.description-column {
     width: 780;
     height: 200px;
+    text-align: left;
+}
+
+td.activity-type-column {
+    font-style: italic;
+    font-size:50px;
+    width: 220px;
+}
+
+td.activity-description-column {
+    width: 780;
     text-align: left;
 }
 
@@ -116,7 +127,14 @@ div.bottom_block {
 
 div.paper_title {
     font-weight: bold;
-    font-size:22px;
+    font-size:24px;
+    padding-bottom: 10px;
+}
+
+div.talk_title {
+    font-weight: bold;
+    font-size:24px;
+    padding-bottom: 10px;
 }
 
 a:link {
@@ -151,13 +169,13 @@ div.tab-name {
     float:left;
     padding-left:30px;
     font-size:150%;
-    padding-top:10px;    
+    padding-top:10px;
 }
 
 div.tab-link {
     float:right;
     padding-right:30px;
-    padding-top:15px;        
+    padding-top:15px;
 }
 
 
@@ -165,4 +183,9 @@ a sup{
   display:inline-block;
   line-height:1.1em;
   text-decoration:none;
+}
+
+h3{
+    font-size: 30px;
+    margin-bottom: 5px;
 }
