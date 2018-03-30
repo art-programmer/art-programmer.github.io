@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FloorNet: A Unified Framework for Floorplan Reconstruction from 3D Scans</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="content project_title top_block">
+      <h1>FloorNet: A Unified Framework for Floorplan Reconstruction from 3D Scans</h1>
+    </div>
+
+    <div class="content project_headline">
+      <div class="img">
+        <img class="img_teaser" src="floornet/teaser.jpg" alt="Teaser">
+      </div>
+      <div class="text">
+        <p>Figure 1: We propose a novel network, FloorNet, to turn RGBD videos of indoor spaces into vector-graphics floorplans. FloorNet consists of three DNN branches. The first branch uses PointNet~\cite{qi2016pointnet} to directly consume 3D information. The second branch takes a top-down point density image in a floorplan domain with a fully convolutional network~\cite{long2015fully}, and produces pixel-wise geometry and semantics information. The third branch produces deep image features by a dilated residual network trained on the semantic segmentation task~\cite{yu2017dilated} as well as a stacked hourglass CNN trained on the room layout estimation~\cite{newell2016stacked}. The PointNet branch and the floorplan branch exchanges intermediate features at every layer, while the image branch contributes deep image features into the decoding part of the floorplan branch. This hybrid DNN architecture effectively processes an input RGBD video with camera poses, covering a large 3D space.</p>
+      </div>
+      <hr />
+    </div>
+
+    <div class="content">
+      <div class="text">
+        <h3>Abstract</h3>
+        <p>The ultimate goal of this indoor mapping research is to automatically reconstruct a floorplan simply by walking through a house with a smartphone in a pocket. This paper tackles this problem by proposing FloorNet, a novel deep neural architecture. The challenge lies in the processing of RGBD streams spanning a large 3D space. FloorNet effectively processes the data through three neural network branches: 1) PointNet with 3D points, exploiting the 3D information; 2) CNN with a 2D point density image in a top-down view, enhancing the local spatial reasoning; and 3) CNN with RGB images, utilizing the full image information. FloorNet exchanges intermediate features across the branches to exploit the best of all the architectures. We have created a benchmark for floorplan reconstruction by acquiring RGBD video streams for 155 residential houses or apartments with Google Tango phones and annotating complete floorplan information. Our qualitative and quantitative evaluations demonstrate that the fusion of three branches effectively improves the reconstruction quality. We hope that the paper together with the benchmark will be an important step towards solving a challenging vector-graphics reconstruction problem.</p>
+      </div>
+      <hr />
+    </div>
+
+    <div class="content">
+      <div class="text">
+        <h3>Video</h3>
+      </div>
+      <div class"project_video">
+        <iframe width="720" height="405" src="https://www.youtube.com/embed/KAtTlQEUQXc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <hr />
+    </div>
+
+    <div class="content">
+      <div class="text">
+        <h3>Paper</h3>
+        <div class="paper_title">FloorNet: A Unified Framework for Floorplan Reconstruction from 3D Scans</div>
+        <div class="paper_authors">
+          <a class="author" href="http://www.cse.wustl.edu/~chenliu/index.html"><b>Chen Liu</b></a>,
+          <a class="author" href="https://eng.ucmerced.edu/people/jyang44">Jimei Yang</a>,
+          <a class="author"
+             href="http://www.duygu-ceylan.com/">Duygu Ceylan</a>,
+          <a class="author"
+             href="http://www.meyumer.com/">Ersin Yumer</a>,
+          <a class="author" href="http://www.cs.sfu.ca/~furukawa/">Yasutaka Furukawa</a>
+        </div>
+	<div class="paper_venue">In <i>Computer Vision
+			and Pattern Recognition (<b>CVPR</b>)</i>, 2018</div>
+	<!--div class="stress"><b>spotlignt presentation</b></div-->
+	<span class="link"><a href="planenet/paper.pdf">[Paper]</a></span>
+	<span class="link"><a href="planenet/supplementary.pdf">[Supp.]</a></span>
+	<span class="link"><a href="https://github.com/art-programmer/PlaneNet">[Code
+	and Data]</a></span>
+      </div>
+      <hr />
+    </div>
+
+    <div class="content bottom_block">
+      <div class="text">
+        <h3>Downloads</h3>
+        <div class="paper_downloads">
+	  <a href="https://github.com/art-programmer/PlaneNet">Code
+	  and Data</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
